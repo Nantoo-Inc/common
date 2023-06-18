@@ -14,6 +14,7 @@ export const errorHandler = (
       .json({ errors: error.serializeErrors() });
   }
 
+  console.log(err);
   return res.status(500).send({
     errors: [{ message: error.message }],
   });
