@@ -5,5 +5,6 @@ export interface UserRegisteringEvent {
     data: {
         name: string;
         email: string;
+        url: string;
     }
 }
