@@ -18,3 +18,5 @@ export * from './events/user-registering-event';
 export * from './events/subjects'
 
 export * from './events/types/booking-status';
+
+export * from './clients/nats-wrapper';
