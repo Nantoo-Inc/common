@@ -15,6 +15,9 @@ export * from './events/publisher';
 export * from './events/property-created-event';
 export * from './events/property-updated-event';
 export * from './events/user-registering-event';
+export * from './events/booking-created-event';
+export * from './events/booking-canceled-event';
+
 export * from './events/subjects'
 
 export * from './events/types/booking-status';
