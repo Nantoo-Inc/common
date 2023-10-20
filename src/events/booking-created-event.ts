@@ -6,7 +6,7 @@ export interface BookingCreatedEvent {
     data: {
         id: string,
         userId: string,
-        ticket: {
+        property: {
             id: string,
             price: number,
         },

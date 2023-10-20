@@ -4,7 +4,7 @@ export interface BookingCanceledEvent {
     subject: Subjects.BookingCanceled
     data: {
         id: string,
-        ticket: {
+        property: {
             id: string
         }
     }
