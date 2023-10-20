@@ -2,7 +2,7 @@ import { Subjects } from "./subjects";
 import { BookingStatus } from "./types/booking-status";
 
 export interface BookingCreatedEvent {
-    Subject: Subjects.BookingCreated,
+    subject: Subjects.BookingCreated,
     data: {
         id: string,
         userId: string,
