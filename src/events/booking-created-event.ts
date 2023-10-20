@@ -12,5 +12,6 @@ export interface BookingCreatedEvent {
         },
         status: BookingStatus,
         expiresAt: string // since this will be a json
+        version: number;
     }
 }
