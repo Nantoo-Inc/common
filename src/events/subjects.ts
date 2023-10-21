@@ -1,8 +1,9 @@
 export enum Subjects {
     PropertyCreated = 'property:created',
     PropertyUpdated = 'property:updated',
-    UserRegistering = 'user:registering',
     BookingCreated = 'booking:created',
-    BookingCanceled = 'booking:canceled'
+    BookingCanceled = 'booking:canceled',
+    UserRegistering = 'user:registering',
+    UserRegistered = 'user:registered'
 }
 
