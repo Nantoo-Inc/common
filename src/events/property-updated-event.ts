@@ -9,5 +9,6 @@ export interface PropertyUpdatedEvent {
         price: number;
         userId: string;
         version: number;
+        bookingId?: string
     }
 }

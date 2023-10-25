@@ -15,7 +15,7 @@ export abstract class Publisher<T extends Event> {
      */
     abstract subject: T['subject'];
 
-    private client: Stan;
+    protected client: Stan;
 
     /**
      * Create a new instance of the publisher.
