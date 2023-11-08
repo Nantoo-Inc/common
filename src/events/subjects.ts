@@ -5,6 +5,7 @@ export enum Subjects {
     BookingCanceled = 'booking:canceled',
     UserRegistering = 'user:registering',
     UserRegistered = 'user:registered',
-    ExpirationComplete = 'expiration:complete'
+    ExpirationComplete = 'expiration:complete',
+    PasswordResetRequest = 'password:reset:request'
 }
 

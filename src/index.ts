@@ -20,6 +20,7 @@ export * from './events/booking-created-event';
 export * from './events/booking-canceled-event';
 export * from './events/user-registered-event';
 export * from './events/expiration-complete-event';
+export * from './events/password-reset-request-event'
 
 export * from './events/subjects'
 
