@@ -15,7 +15,7 @@ declare global {
   }
 }
 
-export const currentUser = (
+export const currentUser = (jwtSecret: string) => (
   req: Request,
   res: Response,
   next: NextFunction
@@ -27,10 +27,10 @@ export const currentUser = (
   try {
     const payload = jwt.verify(
       req.session.jwt,
-      process.env.JWT_KEY!
+      jwtSecret
     ) as UserPayload;
 
     req.currentUser = payload;
-  } catch (error) {}
+  } catch (error) { }
   next();
 };
