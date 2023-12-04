@@ -6,7 +6,7 @@ export interface OrderCreatedEvent {
     data: {
         id: string,
         userId: string,
-        property: {
+        book: {
             id: string,
             price: number,
         },
