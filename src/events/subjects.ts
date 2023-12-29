@@ -13,6 +13,7 @@ export enum Subjects {
     PasswordResetRequest = 'password:reset:request',
     UserImageUploaded = 'user:image:uploaded',
     PlacesImageUploaded = 'places:image:uploaded',
-    UserImageDeleted = 'user:image:deleted'
+    UserImageDeleted = 'user:image:deleted',
+    UserUpdated = 'user:updated'
 }
 
