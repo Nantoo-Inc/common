@@ -5,6 +5,6 @@ export interface UserImageUploadedEvent {
     data: {
         userId: string;
         imageKey: string;
-        imageType: string;
+        imageType: "profile" | "id-upload" | "selfie-upload";
     }
 }
