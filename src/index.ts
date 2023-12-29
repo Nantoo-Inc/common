@@ -7,6 +7,7 @@ export * from './errors/request-validation-error';
 export * from './middlewares/current-user';
 export * from './middlewares/error-handler';
 export * from './middlewares/require-auth';
+export * from './middlewares/restrict-to';
 export * from './middlewares/validate-request';
 export * from './events/book-created-event';
 export * from './events/book-updated-event';

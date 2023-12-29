@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 interface UserPayload {
   id: string;
   email: string;
+  role: string;
 }
 
 // Add optional currentUser property to Request type inside of Express
