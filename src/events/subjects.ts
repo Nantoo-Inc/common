@@ -10,6 +10,8 @@ export enum Subjects {
     UserRegistering = 'user:registering',
     UserRegistered = 'user:registered',
     ExpirationComplete = 'expiration:complete',
-    PasswordResetRequest = 'password:reset:request'
+    PasswordResetRequest = 'password:reset:request',
+    UserImageUploaded = 'user:image:uploaded',
+    PlacesImageUploaded = 'places:image:uploaded'
 }
 
