@@ -25,5 +25,6 @@ export interface UserUpdatedEvent {
         dateOfBirth?: string;
         deviceRegistrationToken?: string;
         role?: string;
+        profileImage?: string;
     }
 }
