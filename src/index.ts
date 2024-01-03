@@ -18,6 +18,7 @@ export * from './events/listener';
 export * from './events/order-canceled-event';
 export * from './events/order-created-event';
 export * from './events/password-reset-request-event';
+export * from './events/place-added-event';
 export * from './events/places-image-uploaded-event';
 export * from './events/property-created-event';
 export * from './events/property-updated-event';
