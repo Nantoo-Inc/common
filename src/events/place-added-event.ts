@@ -5,7 +5,7 @@ export interface PlaceAddedEvent {
     data: {
         name: string;
         description: string;
-        category: string;
+        category: any;
         city: string;
         location: Record<string, any>;
         address: string;
