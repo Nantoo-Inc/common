@@ -1,7 +1,7 @@
 import { Subjects } from "./subjects";
 
 export interface PlaceAddedEvent {
-    subbject: Subjects.PlaceUploaded;
+    subject: Subjects.PlaceUploaded;
     data: {
         name: string;
         description: string;
