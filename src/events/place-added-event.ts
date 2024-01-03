@@ -12,5 +12,6 @@ export interface PlaceAddedEvent {
         ratingAverage?: number;
         priceAverage?: number;
         image: File;
+        id: string;
     }
 }
