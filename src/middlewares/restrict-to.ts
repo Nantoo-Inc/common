@@ -1,4 +1,4 @@
-import { NotAuthorizedError } from "@nantoo/tickets";
+import { NotAuthorizedError } from '../errors/not-authorized-error';
 import { NextFunction, Request, Response } from "express";
 
 export const restrictTo = (...roles: string[]) => {
