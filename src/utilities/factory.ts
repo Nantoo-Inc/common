@@ -17,7 +17,7 @@ export const getAll = (Model: any) => async (req: Request, res: Response, next: 
     const doc = await features.query;
 
     // SEND RESPONSE
-    res.status(200).json({
+    return res.status(200).json({
         status: 'success',
         results: doc.length,
         data: {
@@ -36,7 +36,7 @@ export const getOne = (Model: any, popOptions: Record<string, any>, selectedPath
         return next(new NotFoundError());
     }
 
-    res.status(200).json({
+    return res.status(200).json({
         status: 'success',
         data: {
             data: doc,
