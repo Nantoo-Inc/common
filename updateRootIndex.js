@@ -26,6 +26,6 @@ function updateRootIndexFile(basePath, subDirs) {
 }
 
 const basePath = './src';
-const subDirs = ['errors', 'middlewares', 'events', 'clients'];
+const subDirs = ['errors', 'middlewares', 'events', 'clients', 'utilities'];
 
 updateRootIndexFile(basePath, subDirs);

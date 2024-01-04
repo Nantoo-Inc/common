@@ -30,3 +30,5 @@ export * from './events/user-registered-event';
 export * from './events/user-registering-event';
 export * from './events/user-updated-event';
 export * from './clients/nats-wrapper';
+export * from './utilities/factory';
+export * from './utilities/query-builder';
