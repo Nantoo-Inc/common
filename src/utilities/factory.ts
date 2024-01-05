@@ -31,7 +31,7 @@ export const getAll = (Model: any) => catchAsync(async (req: Request, res: Respo
 });
 
 // to get one record
-export const getOne = (Model: any, popOptions: Record<string, any>, selectedPaths: string) => catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+export const getOne = (Model: any, popOptions?: Record<string, any>, selectedPaths?: string) => catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     let query = Model.findById(req.params.id);
     if (popOptions) query = query.populate(popOptions);
     if (selectedPaths) query = query.select(selectedPaths);
@@ -110,3 +110,15 @@ export const deleteOne = (Model: any) =>
             data: null,
         });
     });
+
+export const createOne = (Model: any) => catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+    const doc = await Model.create(req.body);
+
+    res.status(201).json({
+        status: 'success',
+        data: {
+            data: doc,
+        }
+    });
+})
