@@ -11,7 +11,7 @@ export interface PlaceAddedEvent {
         address: string;
         ratingAverage?: number;
         priceAverage?: number;
-        image: File;
+        image: string;
         id: string;
     }
 }
