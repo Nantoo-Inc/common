@@ -1,8 +1,12 @@
 import { NextFunction, Request, Response } from "express";
 import { APIFeatures } from "./query-builder";
 import { NotFoundError } from "../errors/not-found-errors";
+import { catchAsync } from "./catch-async";
+import { NotAuthorizedError } from "../errors/not-authorized-error";
+import { BadRequestError } from "../errors/bad-request-error";
 
-export const getAll = (Model: any) => async (req: Request, res: Response, next: NextFunction) => {
+// to get all records
+export const getAll = (Model: any) => catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     // To allow for nested GET reviews on place (hack)
     let filter = {};
     if (req.params.placeId) {
@@ -24,9 +28,10 @@ export const getAll = (Model: any) => async (req: Request, res: Response, next: 
             data: doc,
         },
     });
-};
+});
 
-export const getOne = (Model: any, popOptions: Record<string, any>, selectedPaths: string) => async (req: Request, res: Response, next: NextFunction) => {
+// to get one record
+export const getOne = (Model: any, popOptions: Record<string, any>, selectedPaths: string) => catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     let query = Model.findById(req.params.id);
     if (popOptions) query = query.populate(popOptions);
     if (selectedPaths) query = query.select(selectedPaths);
@@ -42,4 +47,66 @@ export const getOne = (Model: any, popOptions: Record<string, any>, selectedPath
             data: doc,
         },
     });
-};
+});
+
+// to update one record
+export const updateOne = (Model: any) => catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+    let doc = await Model.findById(req.params.id);
+
+
+    if (!doc) {
+        return next(new NotFoundError());
+    }
+
+    if (
+        doc.createdBy &&
+        doc.createdBy.toString() !== req.currentUser?.id.toString() &&
+        req.currentUser?.role !== '4286'
+    )
+        return next(new NotAuthorizedError());
+
+    if (
+        Object.keys(req.body).includes('approved') &&
+        req.currentUser?.role !== '4286'
+    ) {
+        return next(new BadRequestError('You are not authorized to carry out this action'));
+    }
+
+    // populate the fields dynamically
+    Object.keys(req.body).forEach(key => {
+        if (key in doc) {
+            doc[key] = req.body[key];
+        }
+    });
+
+    await doc.save();
+
+    return res.status(204).json({
+        status: 'success',
+        data: null,
+    });
+})
+
+// to delete one record
+export const deleteOne = (Model: any) =>
+    catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+        const doc = await Model.findById(req.params.id);
+
+        if (!doc) {
+            return next(new NotFoundError());
+        }
+
+        if (
+            doc.createdBy &&
+            doc.createdBy.toString() !== req.currentUser?.id.toString() &&
+            req.currentUser?.role !== '4286'
+        )
+            return next(new NotAuthorizedError());
+
+        await doc.remove();
+
+        res.status(204).json({
+            status: 'success',
+            data: null,
+        });
+    });
