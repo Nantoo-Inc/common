@@ -83,7 +83,9 @@ export const updateOne = (Model: any) => catchAsync(async (req: Request, res: Re
 
     return res.status(204).json({
         status: 'success',
-        data: null,
+        data: {
+            data: doc,
+        },
     });
 })
 
@@ -103,7 +105,7 @@ export const deleteOne = (Model: any) =>
         )
             return next(new NotAuthorizedError());
 
-        await doc.remove();
+        await doc.deleteOne();
 
         res.status(204).json({
             status: 'success',
