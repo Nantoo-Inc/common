@@ -81,7 +81,7 @@ export const updateOne = (Model: any) => catchAsync(async (req: Request, res: Re
 
     await doc.save();
 
-    return res.status(204).json({
+    return res.status(200).json({
         status: 'success',
         data: {
             data: doc,
