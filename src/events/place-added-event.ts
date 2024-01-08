@@ -7,7 +7,7 @@ export interface PlaceAddedEvent {
         description: string;
         category: any;
         city: string;
-        location: Record<string, any>;
+        location: { type: Record<string, any>, coordinates: number[] };
         address: string;
         ratingAverage?: number;
         priceAverage?: number;

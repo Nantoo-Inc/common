@@ -15,6 +15,7 @@ export enum Subjects {
     PlacesImageUploaded = 'places:image:uploaded',
     UserImageDeleted = 'user:image:deleted',
     UserUpdated = 'user:updated',
-    PlaceUploaded = 'place:uploaded'
+    PlaceUploaded = 'place:uploaded',
+    CategoryCreated = 'category:created',
 }
 

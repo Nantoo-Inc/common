@@ -13,6 +13,7 @@ export * from './events/book-created-event';
 export * from './events/book-updated-event';
 export * from './events/booking-canceled-event';
 export * from './events/booking-created-event';
+export * from './events/category-created-event';
 export * from './events/expiration-complete-event';
 export * from './events/listener';
 export * from './events/order-canceled-event';
