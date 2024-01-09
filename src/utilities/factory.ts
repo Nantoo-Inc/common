@@ -1,9 +1,9 @@
 import { NextFunction, Request, Response } from "express";
 import { APIFeatures } from "./query-builder";
-import { NotFoundError } from "../errors/not-found-errors";
 import { catchAsync } from "./catch-async";
 import { NotAuthorizedError } from "../errors/not-authorized-error";
 import { BadRequestError } from "../errors/bad-request-error";
+import { AppError } from "../errors/app-error";
 
 // to get all records
 export const getAll = (Model: any) => catchAsync(async (req: Request, res: Response, next: NextFunction) => {
@@ -38,7 +38,7 @@ export const getOne = (Model: any, popOptions?: Record<string, any>, selectedPat
     const doc = await query;
 
     if (!doc) {
-        return next(new NotFoundError());
+        return next(new AppError('No doc found with that id', 404));
     }
 
     return res.status(200).json({
@@ -55,7 +55,7 @@ export const updateOne = (Model: any) => catchAsync(async (req: Request, res: Re
 
 
     if (!doc) {
-        return next(new NotFoundError());
+        return next(new AppError('No doc found with that id', 404));
     }
 
     if (
@@ -95,7 +95,7 @@ export const deleteOne = (Model: any) =>
         const doc = await Model.findById(req.params.id);
 
         if (!doc) {
-            return next(new NotFoundError());
+            return next(new AppError('No doc found with that id', 404));
         }
 
         if (
