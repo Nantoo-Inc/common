@@ -12,7 +12,6 @@ export interface InvitationCreatedEvent {
             maxPeople: number;
             type: string;
         },
-        admins: { email: string, name: string }[]
         adminUrl: string
     }
 }
