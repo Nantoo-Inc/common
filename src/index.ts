@@ -36,4 +36,5 @@ export * from './events/user-updated-event';
 export * from './clients/nats-wrapper';
 export * from './utilities/catch-async';
 export * from './utilities/factory';
+export * from './utilities/get-age';
 export * from './utilities/query-builder';
