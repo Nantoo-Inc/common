@@ -7,5 +7,7 @@ export interface NewPrivateFriendship {
         acceptedUserId: string;
         acceptingUserId: string;
         place: { name: string, images: string[], id: string };
+        inviteBillResponsibility: string,
+        organizerName: string;
     }
 }

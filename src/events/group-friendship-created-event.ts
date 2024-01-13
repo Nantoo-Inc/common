@@ -7,6 +7,8 @@ export interface NewGroupFriendship {
         acceptedUserId: string;
         acceptingUserId: string;
         place: { name: string, images: string[], id: string };
-        maxPeople: number
+        maxPeople: number,
+        inviteBillResponsibility: string,
+        organizerName: string;
     }
 }
