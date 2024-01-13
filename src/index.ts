@@ -18,6 +18,8 @@ export * from './events/booking-created-event';
 export * from './events/category-created-event';
 export * from './events/expiration-complete-event';
 export * from './events/invitation-created-event';
+export * from './events/invite-approved-event';
+export * from './events/invite-disapproved-event';
 export * from './events/listener';
 export * from './events/order-canceled-event';
 export * from './events/order-created-event';

@@ -18,6 +18,8 @@ export enum Subjects {
     PlaceUploaded = 'place:uploaded',
     CategoryCreated = 'category:created',
     InvitationCreated = 'invitation:created',
-    AcceptedToMeet = 'accepted:to:meet'
+    AcceptedToMeet = 'accepted:to:meet',
+    InviteApproved = 'invite:approved',
+    InviteDisaproved = 'invite:disapproved'
 }
 
