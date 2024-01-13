@@ -5,6 +5,7 @@ export interface AcceptedToMeetEvent {
     data: {
         invitationId: string;
         acceptedUserId: string;
+        acceptingUserId: string;
         placeId: string;
         maxPeople: number;
     }
