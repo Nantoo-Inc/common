@@ -19,6 +19,8 @@ export enum Subjects {
     CategoryCreated = 'category:created',
     InvitationCreated = 'invitation:created',
     AcceptedToMeet = 'accepted:to:meet',
+    NewPrivateFriendship = 'new:private:friendship',
+    NewGroupFriendship = 'new:group:friendship',
     InviteApproved = 'invite:approved',
     InviteDisaproved = 'invite:disapproved'
 }
