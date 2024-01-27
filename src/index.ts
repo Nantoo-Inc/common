@@ -20,6 +20,7 @@ export * from './events/group-friendship-created-event';
 export * from './events/invitation-created-event';
 export * from './events/invite-approved-event';
 export * from './events/invite-disapproved-event';
+export * from './events/invite-liked-event';
 export * from './events/listener';
 export * from './events/order-canceled-event';
 export * from './events/order-created-event';
