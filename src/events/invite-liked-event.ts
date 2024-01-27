@@ -3,8 +3,8 @@ import { Subjects } from "./subjects";
 export interface InviteLikedEvent {
     subject: Subjects.InviteLiked,
     data: {
-        oragnizerId: string,
-        interedtedUserId: string,
+        organizerId: string,
+        interestedUserId: string,
         invitationId: string
     }
 }
